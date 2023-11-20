@@ -1,0 +1,105 @@
+.menu {
+    padding: 50px 0;
+    width: 80%;
+    margin: auto;
+    h1 {
+        padding-bottom: 2rem;
+        text-align: center;
+    }
+    .divider {
+        width: 20%;
+        margin: auto;
+    }
+    input[type=radio] {
+        display: none;
+    }
+    label {
+        font-size: 1.4rem;
+        display: block;
+        padding: 0.7rem 1.7rem;
+        cursor: pointer;
+    }
+}
+
+.menu-container {
+    ul {
+        list-style: none;
+        padding-top: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        li {
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+    }
+    
+
+    .menu-lists {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+    }
+    .menu-list {
+        position: relative;
+        left: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 100%;
+        flex-wrap: wrap;
+        gap: 5rem;
+        h4 {
+            font-weight: 400;
+            text-transform: uppercase;
+            .dots {
+                letter-spacing: 0.5rem;
+            }
+        }
+        h5 {
+            font-weight: 400;
+            font-style: italic;
+        }
+        .menu-item {
+            margin-top: 1.5rem;
+        }
+    }
+}
+ul li:hover,
+#starters:checked ~ .menu-categories ul li:nth-child(1),
+#main-dishes:checked ~ .menu-categories ul li:nth-child(2),
+#desserts:checked ~ .menu-categories ul li:nth-child(3),
+#drinks:checked ~ .menu-categories ul li:nth-child(4) {
+    border-color: var(--color);
+}
+
+#starters:checked ~ .menu-lists .starters {
+    left: 0;
+}
+#main-dishes:checked ~ .menu-lists .main-dishes{
+    left: -100%;
+}
+#desserts:checked ~ .menu-lists .desserts {
+    left: -200%;
+}
+#drinks:checked ~ .menu-lists .drinks {
+    left: -300%;
+}
+
+@media screen and (max-width: 1200px) {
+    .menu {
+        width: 90%;
+        label {
+            padding: 0.7rem;
+        }
+    }
+    .menu-container {
+        .menu-list {
+            justify-content: center;
+            gap: 0rem;
+        }
+    }
+}
